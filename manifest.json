@@ -1,0 +1,137 @@
+{
+  "module_count": 26,
+  "modules": {
+    "AdDomain": {
+      "clash_classical_rules": 396,
+      "pure_domain_set": true,
+      "surge_rules": 396
+    },
+    "AdultDomain": {
+      "clash_classical_rules": 19737,
+      "pure_domain_set": true,
+      "surge_rules": 19737
+    },
+    "Apple": {
+      "clash_classical_rules": 459,
+      "pure_domain_set": false,
+      "surge_rules": 459
+    },
+    "Backdoor_Block": {
+      "clash_classical_rules": 75,
+      "pure_domain_set": false,
+      "surge_rules": 75
+    },
+    "BehaviorDomain": {
+      "clash_classical_rules": 334,
+      "pure_domain_set": false,
+      "surge_rules": 334
+    },
+    "Botnet_Block": {
+      "clash_classical_rules": 30,
+      "pure_domain_set": false,
+      "surge_rules": 30
+    },
+    "China": {
+      "clash_classical_rules": 1860,
+      "pure_domain_set": false,
+      "surge_rules": 1860
+    },
+    "ChinaMedia": {
+      "clash_classical_rules": 1226,
+      "pure_domain_set": false,
+      "surge_rules": 1226
+    },
+    "Crypto": {
+      "clash_classical_rules": 633,
+      "pure_domain_set": false,
+      "surge_rules": 633
+    },
+    "GamePlatforms": {
+      "clash_classical_rules": 162,
+      "pure_domain_set": false,
+      "surge_rules": 162
+    },
+    "GitHub": {
+      "clash_classical_rules": 89,
+      "pure_domain_set": true,
+      "surge_rules": 89
+    },
+    "GlobalMedia": {
+      "clash_classical_rules": 156,
+      "pure_domain_set": false,
+      "surge_rules": 156
+    },
+    "Google": {
+      "clash_classical_rules": 181,
+      "pure_domain_set": false,
+      "surge_rules": 181
+    },
+    "Lan": {
+      "clash_classical_rules": 28,
+      "pure_domain_set": false,
+      "surge_rules": 28
+    },
+    "Malware_IOC_Block": {
+      "clash_classical_rules": 2181,
+      "pure_domain_set": false,
+      "surge_rules": 2181
+    },
+    "Microsoft": {
+      "clash_classical_rules": 101,
+      "pure_domain_set": true,
+      "surge_rules": 101
+    },
+    "OpenAI": {
+      "clash_classical_rules": 366,
+      "pure_domain_set": false,
+      "surge_rules": 367
+    },
+    "PCDNDomain": {
+      "clash_classical_rules": 43,
+      "pure_domain_set": true,
+      "surge_rules": 43
+    },
+    "Pegasus_Block": {
+      "clash_classical_rules": 1438,
+      "pure_domain_set": true,
+      "surge_rules": 1438
+    },
+    "Phishing_Block": {
+      "clash_classical_rules": 111,
+      "pure_domain_set": false,
+      "surge_rules": 111
+    },
+    "Proxy": {
+      "clash_classical_rules": 5038,
+      "pure_domain_set": false,
+      "surge_rules": 5038
+    },
+    "Quarantine_Block": {
+      "clash_classical_rules": 5,
+      "pure_domain_set": false,
+      "surge_rules": 5
+    },
+    "RegionalRouting": {
+      "clash_classical_rules": 100,
+      "pure_domain_set": false,
+      "surge_rules": 100
+    },
+    "Scam_Block": {
+      "clash_classical_rules": 29339,
+      "pure_domain_set": true,
+      "surge_rules": 29339
+    },
+    "Telegram": {
+      "clash_classical_rules": 33,
+      "pure_domain_set": false,
+      "surge_rules": 33
+    },
+    "WeChat": {
+      "clash_classical_rules": 239,
+      "pure_domain_set": false,
+      "surge_rules": 239
+    }
+  },
+  "upstream_commit": "a3a607d099db906d886970e404d6d8eb8c3cc625",
+  "upstream_repo": "https://github.com/Thoseyearsbrian/Aegis"
+}

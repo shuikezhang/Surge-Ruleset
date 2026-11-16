@@ -1,0 +1,8 @@
+# Module: Quarantine_Block (Clash / Mihomo classical)
+# Upstream: Thoseyearsbrian/Aegis (a3a607d099db) | License: Apache-2.0
+payload:
+  - 'DOMAIN-SUFFIX,squarerefresh.xyz'
+  - 'DOMAIN-SUFFIX,ahdohpiechei.com'
+  - 'IP-CIDR,117.68.54.33/32,no-resolve'
+  - 'IP-CIDR,61.147.211.30/32,no-resolve'
+  - 'IP-CIDR,58.220.65.31/32,no-resolve'
