@@ -1,5 +1,4 @@
-# Module: AdDomain
-# Upstream: Thoseyearsbrian/Aegis (a3a607d099db) | License: Apache-2.0
+# shuikezhang/Surge-Ruleset | Module: AdDomain
 DOMAIN-SUFFIX,ad.line.me
 DOMAIN-SUFFIX,conversionsapigateway.com
 DOMAIN-SUFFIX,ipredictive.com
@@ -29,16 +28,11 @@ DOMAIN-SUFFIX,hb.yellowblue.io
 DOMAIN-SUFFIX,rtb.openx.net
 DOMAIN-SUFFIX,htlb.casalemedia.com
 DOMAIN-SUFFIX,t.adx.opera.com
-DOMAIN-SUFFIX,ad.turn.com
 DOMAIN-SUFFIX,6sc.co
 DOMAIN-SUFFIX,adsrvr.org
 DOMAIN-SUFFIX,trkn.us
-DOMAIN-SUFFIX,match.adsrvr.org
 DOMAIN-SUFFIX,cdn.carbonads.com
 DOMAIN-SUFFIX,ads-twitter.com
-DOMAIN-SUFFIX,phx.creativecdn.com
-DOMAIN-SUFFIX,openads-cdn.adsrvr.org
-DOMAIN-SUFFIX,direct.adsrvr.org
 DOMAIN-SUFFIX,prebid-server.rubiconproject.com
 DOMAIN-SUFFIX,agkn.com
 DOMAIN-SUFFIX,dynamic.criteo.com
@@ -61,7 +55,6 @@ DOMAIN-SUFFIX,p.teads.tv
 DOMAIN-SUFFIX,a.mgid.com
 DOMAIN-SUFFIX,apdcdn.tc.qq.com
 DOMAIN-SUFFIX,tsbdy.gtimg.com
-DOMAIN-SUFFIX,admaterial.gdtimg.com
 DOMAIN-SUFFIX,apps.rokt.com
 DOMAIN-SUFFIX,elb.the-ozone-project.com
 DOMAIN-SUFFIX,prebid.the-ozone-project.com
@@ -83,25 +76,16 @@ DOMAIN-SUFFIX,bidder.criteo.com
 DOMAIN-SUFFIX,tracking.criteo.com
 DOMAIN-SUFFIX,delivery.criteo.com
 DOMAIN-SUFFIX,rlcdn.com
-DOMAIN-SUFFIX,pixel.rlcdn.com
-DOMAIN-SUFFIX,ads.rlcdn.com
-DOMAIN-SUFFIX,sync.rlcdn.com
 DOMAIN-SUFFIX,ads-i4.xhscdn.com
 DOMAIN-SUFFIX,scripts.pubnation.com
 DOMAIN-SUFFIX,gtrace.mediago.io
 DOMAIN-SUFFIX,gdtimg.com
-DOMAIN-SUFFIX,qzs.gdtimg.com
-DOMAIN-SUFFIX,union.gdtimg.com
 DOMAIN-SUFFIX,adnet.qq.com
-DOMAIN-SUFFIX,report.gdtimg.com
-DOMAIN-SUFFIX,sdk.gdtimg.com
 DOMAIN-SUFFIX,ads.qq.com
-DOMAIN-SUFFIX,tracking.gdtimg.com
 DOMAIN-SUFFIX,win.gdt.qq.com
 DOMAIN-SUFFIX,xc.gdt.qq.com
 DOMAIN-SUFFIX,rpt.gdt.qq.com
 DOMAIN-SUFFIX,c2.gdt.qq.com
-DOMAIN-SUFFIX,adsmind.gdtimg.com
 DOMAIN-SUFFIX,adsfile.qq.com
 DOMAIN-SUFFIX,adsmind.ugdtimg.com
 DOMAIN-SUFFIX,xs.l.qq.com
@@ -122,7 +106,6 @@ DOMAIN-SUFFIX,adxlog-adnet.vivo.com.cn
 DOMAIN-SUFFIX,ads3-normal-hl.zijieapi.com
 DOMAIN-SUFFIX,advertising-api-fe.amazon.com
 DOMAIN-SUFFIX,ads.pubmatic.com
-DOMAIN-SUFFIX,s.amazon-adsystem.com
 DOMAIN-SUFFIX,adcolony.com
 DOMAIN-SUFFIX,gemini.yahoo.com
 DOMAIN-SUFFIX,advertising-api.amazon.com
@@ -134,7 +117,6 @@ DOMAIN-SUFFIX,adview.cn
 DOMAIN-SUFFIX,advertising-api-eu.amazon.com
 DOMAIN-SUFFIX,ads.pinterest.com
 DOMAIN-SUFFIX,ads.service.kugou.com
-DOMAIN-SUFFIX,res1.applovin.com
 DOMAIN-SUFFIX,canvas-cdn.gdt.qq.com
 DOMAIN-SUFFIX,click.liftoff.io
 DOMAIN-SUFFIX,click.chinaliftoff.io
@@ -152,7 +134,6 @@ DOMAIN-SUFFIX,edge.ads.twitch.tv
 DOMAIN-SUFFIX,litchiads.com
 DOMAIN-SUFFIX,mobads-logs.baidu.com
 DOMAIN-SUFFIX,mobads-pre-config.cdn.bcebos.com
-DOMAIN-SUFFIX,rt.applovin.com
 DOMAIN-SUFFIX,rt.applvn.com
 DOMAIN-SUFFIX,saad.ms.zhangyue.net
 DOMAIN-SUFFIX,impression-asia.chinaliftoff.io
@@ -170,7 +151,6 @@ DOMAIN-SUFFIX,adsdk.vivo.com.cn
 DOMAIN-SUFFIX,v.adx.hubcloud.com.cn
 DOMAIN-SUFFIX,vungle.com
 DOMAIN-SUFFIX,webtrack.ad.intl.xiaomi.com
-DOMAIN-SUFFIX,y.applovin.com
 DOMAIN-SUFFIX,yeahmobi.com
 DOMAIN-SUFFIX,yes.youmi.net
 DOMAIN-SUFFIX,yt-adapter.bytedance.com
@@ -239,11 +219,9 @@ DOMAIN-SUFFIX,districtm.io
 DOMAIN-SUFFIX,doubleclick.com
 DOMAIN-SUFFIX,flashtalking.com
 DOMAIN-SUFFIX,mozoo.com
-DOMAIN-SUFFIX,n.gemini.yahoo.com
 DOMAIN-SUFFIX,optad360.io
 DOMAIN-SUFFIX,optad360.net
 DOMAIN-SUFFIX,paid.outbrain.com
-DOMAIN-SUFFIX,pips.taboola.com
 DOMAIN-SUFFIX,popads.media
 DOMAIN-SUFFIX,popads.net
 DOMAIN-SUFFIX,powerlinks.com
@@ -314,7 +292,6 @@ DOMAIN-SUFFIX,ads.appsgeyser.com
 DOMAIN-SUFFIX,ads.as4x.tmcs.net
 DOMAIN-SUFFIX,ads.as4x.tmcs.ticketmaster.com
 DOMAIN-SUFFIX,ads.asiafriendfinder.com
-DOMAIN-SUFFIX,ads.avazu.net
 DOMAIN-SUFFIX,ads.bb59.ru
 DOMAIN-SUFFIX,ads.bigchurch.com
 DOMAIN-SUFFIX,ads.bigfoot.com
@@ -374,7 +351,6 @@ DOMAIN-SUFFIX,nend.net
 DOMAIN-SUFFIX,newopenx.detik.com
 DOMAIN-SUFFIX,ng3.ads.warnerbros.com
 DOMAIN-SUFFIX,offer.fyber.com
-DOMAIN-SUFFIX,offer.sponsorpay.com
 DOMAIN-SUFFIX,ogury.com
 DOMAIN-SUFFIX,openad.tf1.fr
 DOMAIN-SUFFIX,openad.travelnow.com

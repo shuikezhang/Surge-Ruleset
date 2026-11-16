@@ -1,5 +1,4 @@
-# Module: Telegram (Clash / Mihomo classical)
-# Upstream: Thoseyearsbrian/Aegis (a3a607d099db) | License: Apache-2.0
+# shuikezhang/Surge-Ruleset | Module: Telegram (classical)
 payload:
   - 'DOMAIN-SUFFIX,telegram.org'
   - 'DOMAIN-SUFFIX,t.me'

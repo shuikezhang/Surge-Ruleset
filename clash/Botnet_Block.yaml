@@ -1,9 +1,7 @@
-# Module: Botnet_Block (Clash / Mihomo classical)
-# Upstream: Thoseyearsbrian/Aegis (a3a607d099db) | License: Apache-2.0
+# shuikezhang/Surge-Ruleset | Module: Botnet_Block (classical)
 payload:
   - 'DOMAIN-SUFFIX,14emeliaterracewestroxburyma02132.su'
   - 'DOMAIN-SUFFIX,api.groksearch.net'
-  - 'DOMAIN-SUFFIX,nnkjzfaxkjanxzk.14emeliaterracewestroxburyma02132.su'
   - 'DOMAIN-SUFFIX,zachebt.chachasli.de'
   - 'DOMAIN-SUFFIX,zachebt.groksearch.net'
   - 'DOMAIN-SUFFIX,rtrdedge1.samsungcdn.cloud'

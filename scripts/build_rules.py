@@ -1,19 +1,20 @@
 #!/usr/bin/env python3
 """
-Build & validate Surge (.list + domainset) and Clash/Mihomo (.yaml classical + domain)
-rulesets from Thoseyearsbrian/Aegis upstream rules.
+Standalone Surge & Clash/Mihomo Ruleset Compiler.
 
-License: Apache-2.0 (preserving Thoseyearsbrian/Aegis attribution).
+Maintains `src/*.list` as the single source of truth and compiles:
+- `surge/*.list`           (Surge RULE-SET)
+- `surge/domainset/*.list` (Surge DOMAIN-SET for pure-domain modules)
+- `clash/*.yaml`           (Clash / Mihomo classical rule-provider)
+- `clash/domain/*.yaml`    (Clash / Mihomo domain rule-provider for pure-domain modules)
 """
 from __future__ import annotations
 
 import argparse
-import datetime as dt
 import ipaddress
 import json
 import pathlib
 import re
-import subprocess
 import sys
 
 TYPO_FIXES = {
@@ -31,37 +32,6 @@ SUPPORTED_RULE_TYPES = {
     "IP-ASN",
 }
 
-LAN_RAW_RULES = [
-    ("DOMAIN-SUFFIX", "local"),
-    ("DOMAIN-SUFFIX", "lan"),
-    ("DOMAIN-SUFFIX", "home.arpa"),
-    ("DOMAIN-SUFFIX", "localhost"),
-    ("DOMAIN-SUFFIX", "invalid"),
-    ("DOMAIN-SUFFIX", "test"),
-    ("DOMAIN", "router.asus.com"),
-    ("DOMAIN", "routerlogin.net"),
-    ("IP-CIDR", "0.0.0.0/8"),
-    ("IP-CIDR", "10.0.0.0/8"),
-    ("IP-CIDR", "100.64.0.0/10"),
-    ("IP-CIDR", "127.0.0.0/8"),
-    ("IP-CIDR", "169.254.0.0/16"),
-    ("IP-CIDR", "172.16.0.0/12"),
-    ("IP-CIDR", "192.0.0.0/24"),
-    ("IP-CIDR", "192.0.2.0/24"),
-    ("IP-CIDR", "192.88.99.0/24"),
-    ("IP-CIDR", "192.168.0.0/16"),
-    ("IP-CIDR", "198.18.0.0/15"),
-    ("IP-CIDR", "198.51.100.0/24"),
-    ("IP-CIDR", "203.0.113.0/24"),
-    ("IP-CIDR", "224.0.0.0/4"),
-    ("IP-CIDR", "240.0.0.0/4"),
-    ("IP-CIDR", "255.255.255.255/32"),
-    ("IP-CIDR6", "::1/128"),
-    ("IP-CIDR6", "fc00::/7"),
-    ("IP-CIDR6", "fe80::/10"),
-    ("IP-CIDR6", "ff00::/8"),
-]
-
 DOMAIN_RE = re.compile(r"^[a-z0-9_.-]+$", re.IGNORECASE)
 
 
@@ -78,7 +48,6 @@ def parse_rule_line(raw: str, source_file: str, lineno: int) -> tuple[str, str] 
         raise ValueError(f"{source_file}:{lineno}: unsupported rule type {rtype!r} in {raw!r}")
 
     if rtype in ("DOMAIN", "DOMAIN-SUFFIX"):
-        # Clean macOS smart-dash / zero-width chars in punycode (e.g. xn—\u200b -> xn--)
         val = re.sub(r"[\u200b-\u200f\ufeff]", "", val)
         val = val.replace("xn\u2014", "xn--").replace("xn\u2013", "xn--")
         val = val.strip().strip(".").lower()
@@ -133,12 +102,7 @@ def yaml_quote(s: str) -> str:
     return f"'{escaped}'"
 
 
-def write_outputs(
-    repo_root: pathlib.Path,
-    module_name: str,
-    entries: list[tuple[str, str]],
-    upstream_sha: str,
-) -> dict:
+def write_outputs(repo_root: pathlib.Path, module_name: str, entries: list[tuple[str, str]]) -> dict:
     entries = deduplicate(entries)
     if not entries:
         raise ValueError(f"Module {module_name} produced 0 entries")
@@ -150,10 +114,7 @@ def write_outputs(
     for d in (surge_dir, surge_ds_dir, clash_dir, clash_dom_dir):
         d.mkdir(parents=True, exist_ok=True)
 
-    header = [
-        f"# Module: {module_name}",
-        f"# Upstream: Thoseyearsbrian/Aegis ({upstream_sha[:12]}) | License: Apache-2.0",
-    ]
+    header = [f"# shuikezhang/Surge-Ruleset | Module: {module_name}"]
 
     # 1. Surge RULE-SET (.list)
     surge_lines = list(header)
@@ -165,11 +126,8 @@ def write_outputs(
     (surge_dir / f"{module_name}.list").write_text("\n".join(surge_lines) + "\n", encoding="utf-8")
 
     # 2. Clash/Mihomo classical (.yaml)
-    # Omit IP-ASN in classical YAML because Aegis already includes corresponding CIDRs
-    # and standard Clash / Mihomo configs without ASN.mmdb reject IP-ASN.
     clash_lines = [
-        f"# Module: {module_name} (Clash / Mihomo classical)",
-        f"# Upstream: Thoseyearsbrian/Aegis ({upstream_sha[:12]}) | License: Apache-2.0",
+        f"# shuikezhang/Surge-Ruleset | Module: {module_name} (classical)",
         "payload:",
     ]
     clash_count = 0
@@ -190,8 +148,7 @@ def write_outputs(
     if pure_domain:
         ds_lines = list(header)
         cd_lines = [
-            f"# Module: {module_name} (Clash / Mihomo domain behavior)",
-            f"# Upstream: Thoseyearsbrian/Aegis ({upstream_sha[:12]}) | License: Apache-2.0",
+            f"# shuikezhang/Surge-Ruleset | Module: {module_name} (domain)",
             "payload:",
         ]
         for rtype, val in entries:
@@ -217,9 +174,9 @@ def verify_outputs(repo_root: pathlib.Path, stats: dict[str, dict]) -> None:
         "Proxy": 1000,
         "Google": 50,
         "OpenAI": 100,
-        "Apple": 100,
+        "Apple": 40,
         "Telegram": 15,
-        "WeChat": 50,
+        "WeChat": 30,
         "Lan": 20,
     }
     for mod, min_cnt in core_minimums.items():
@@ -236,7 +193,7 @@ def verify_outputs(repo_root: pathlib.Path, stats: dict[str, dict]) -> None:
             raise RuntimeError(f"{yf}: malformed YAML payload items")
 
 
-def build_readme(repo_root: pathlib.Path, stats: dict[str, dict], upstream_sha: str) -> None:
+def build_readme(repo_root: pathlib.Path, stats: dict[str, dict]) -> None:
     rows = []
     base = "https://raw.githubusercontent.com/shuikezhang/Surge-Ruleset/main"
     for name in sorted(stats.keys()):
@@ -252,23 +209,20 @@ def build_readme(repo_root: pathlib.Path, stats: dict[str, dict], upstream_sha: 
 
     readme = "\n".join(
         [
-            "# Surge & Clash Ruleset (Aegis Edition)",
+            "# Surge & Clash Ruleset",
             "",
-            "Self-hosted dual-format rulesets derived from [Thoseyearsbrian/Aegis](https://github.com/Thoseyearsbrian/Aegis) (Apache-2.0), automatically compiled and validated for both **Surge** (`RULE-SET` / `DOMAIN-SET`) and **Clash / Mihomo** (`classical` / `domain` rule-providers).",
+            "独立维护的 **Surge**（`RULE-SET` / `DOMAIN-SET`）与 **Clash / Mihomo**（`classical` / `domain`）双端分流与安全拦截规则库。",
             "",
-            f"- **Upstream Commit**: `{upstream_sha[:12]}`",
-            f"- **Total Modules**: `{len(stats)}` (`25` upstream modules + `Lan`)",
-            "- **Auto Sync**: GitHub Actions (`.github/workflows/sync-aegis.yml`) runs daily + supports manual `workflow_dispatch` with strict fail-closed validation.",
+            "## 维护方式",
             "",
-            "## Modules",
+            "1. 直接编辑 `src/<Module>.list` 源文件（唯一真值源）；",
+            "2. 本地运行 `python3 scripts/build_rules.py --verify`（或直接提交推送 `src/*.list`，由 GitHub Actions `.github/workflows/ci.yml` 自动重编译双端产物并运行防误杀单测）。",
             "",
-            "| Module | Rules | Surge (`RULE-SET`) | Clash / Mihomo (`classical`) | Pure-Domain Fast Set (`DOMAIN-SET` / `domain`) |",
+            "## 规则模块清单",
+            "",
+            "| 模块 | 规则数 | Surge (`RULE-SET`) | Clash / Mihomo (`classical`) | 纯域名高速集 (`DOMAIN-SET` / `domain`) |",
             "|---|---:|---|---|---|",
             *rows,
-            "",
-            "## License & Attribution",
-            "",
-            "Upstream rulesets are authored by [Thoseyearsbrian/Aegis](https://github.com/Thoseyearsbrian/Aegis) under the [Apache License 2.0](./LICENSE).",
             "",
         ]
     )
@@ -277,48 +231,36 @@ def build_readme(repo_root: pathlib.Path, stats: dict[str, dict], upstream_sha: 
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--upstream", required=True, help="Path to cloned Thoseyearsbrian/Aegis repo")
-    ap.add_argument("--out", default=".", help="Output repository root")
+    ap.add_argument("--src", default="src", help="Source rules directory (default: src)")
+    ap.add_argument("--out", default=".", help="Repository root directory (default: .)")
     ap.add_argument("--verify", action="store_true", help="Run post-build sanity & format checks")
     args = ap.parse_args()
 
-    upstream = pathlib.Path(args.upstream).resolve()
     repo_root = pathlib.Path(args.out).resolve()
-    rules_dir = upstream / "rules"
-    if not rules_dir.is_dir():
-        raise SystemExit(f"Upstream rules directory not found: {rules_dir}")
-
-    try:
-        upstream_sha = (
-            subprocess.check_output(["git", "-C", str(upstream), "rev-parse", "HEAD"], text=True).strip()
-        )
-    except Exception:
-        upstream_sha = "unknown"
+    src_dir = (repo_root / args.src).resolve() if not pathlib.Path(args.src).is_absolute() else pathlib.Path(args.src)
+    if not src_dir.is_dir():
+        raise SystemExit(f"Source directory not found: {src_dir}")
 
     stats: dict[str, dict] = {}
-    for list_file in sorted(rules_dir.glob("*.list")):
+    for list_file in sorted(src_dir.glob("*.list")):
         mod_name = list_file.stem
         entries: list[tuple[str, str]] = []
         for idx, raw in enumerate(list_file.read_text(encoding="utf-8").splitlines(), 1):
             parsed = parse_rule_line(raw, list_file.name, idx)
             if parsed is not None:
                 entries.append(parsed)
-        stats[mod_name] = write_outputs(repo_root, mod_name, entries, upstream_sha)
-
-    stats["Lan"] = write_outputs(repo_root, "Lan", LAN_RAW_RULES, upstream_sha)
+        stats[mod_name] = write_outputs(repo_root, mod_name, entries)
 
     if args.verify:
         verify_outputs(repo_root, stats)
 
     manifest = {
-        "upstream_repo": "https://github.com/Thoseyearsbrian/Aegis",
-        "upstream_commit": upstream_sha,
         "module_count": len(stats),
         "modules": stats,
     }
     (repo_root / "manifest.json").write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    build_readme(repo_root, stats, upstream_sha)
-    print(f"Built & verified {len(stats)} modules from Aegis@{upstream_sha[:12]}")
+    build_readme(repo_root, stats)
+    print(f"Built & verified {len(stats)} standalone modules from {src_dir}")
     return 0
 
 

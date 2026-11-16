@@ -1,5 +1,4 @@
-# Module: BehaviorDomain
-# Upstream: Thoseyearsbrian/Aegis (a3a607d099db) | License: Apache-2.0
+# shuikezhang/Surge-Ruleset | Module: BehaviorDomain
 DOMAIN-SUFFIX,longcloud.weixin.com
 DOMAIN-SUFFIX,badjs.weixinbridge.com
 DOMAIN-SUFFIX,analytics.edge.apple.com
@@ -26,7 +25,6 @@ DOMAIN-SUFFIX,px.ucweb.com
 DOMAIN-SUFFIX,loggw-external.alipay.com
 DOMAIN-SUFFIX,loggw-ex.alipay.com
 DOMAIN-SUFFIX,arms-retcode.aliyuncs.com
-DOMAIN-SUFFIX,s9.cnzz.com
 DOMAIN-SUFFIX,adashx.m.taobao.com
 DOMAIN-SUFFIX,umdc.alibaba-inc.com
 IP-CIDR,110.76.3.58/32,no-resolve
@@ -35,7 +33,6 @@ IP-CIDR,119.42.251.214/32,no-resolve
 IP-CIDR,203.209.244.141/32,no-resolve
 IP-CIDR,203.209.244.173/32,no-resolve
 DOMAIN-SUFFIX,app-measurement.com
-DOMAIN-SUFFIX,config.app-measurement.com
 DOMAIN-SUFFIX,firebaseinstallations.googleapis.com
 DOMAIN-SUFFIX,firebase-settings.crashlytics.com
 DOMAIN-SUFFIX,crashlyticsreports-pa.googleapis.com
@@ -51,7 +48,6 @@ DOMAIN-SUFFIX,fls.doubleclick.net
 DOMAIN-SUFFIX,cm.g.doubleclick.net
 DOMAIN-SUFFIX,datadoghq-browser-agent.com
 DOMAIN-SUFFIX,browser-intake-us5-datadoghq.com
-DOMAIN-SUFFIX,csp-report.browser-intake-datadoghq.eu
 DOMAIN-SUFFIX,browser-intake-datadoghq.com
 DOMAIN-SUFFIX,browser-intake-us3-datadoghq.com
 IP-CIDR,3.233.158.112/32,no-resolve
@@ -69,7 +65,6 @@ DOMAIN-SUFFIX,logservice.hicloud.com
 DOMAIN-SUFFIX,metrics1.data.hicloud.com
 DOMAIN-SUFFIX,o33249.ingest.us.sentry.io
 DOMAIN-SUFFIX,sentry-cdn.com
-DOMAIN-SUFFIX,js.sentry-cdn.com
 DOMAIN-SUFFIX,analytics.coinbase.com
 DOMAIN-SUFFIX,log-sdk.ksapisrv.com
 DOMAIN-SUFFIX,reportlog.corp.kuaishou.com
@@ -113,7 +108,6 @@ DOMAIN-SUFFIX,rumt-zh.com
 DOMAIN-SUFFIX,rumt-sg.com
 DOMAIN-SUFFIX,htrace.wetvinfo.com
 DOMAIN-SUFFIX,h.trace.qq.com
-DOMAIN-SUFFIX,otheve.beacon.qq.com
 DOMAIN-SUFFIX,api.rudderstack.com
 DOMAIN-SUFFIX,cdn.rudderlabs.com
 DOMAIN-SUFFIX,collector.snowplowanalytics.com
@@ -121,7 +115,6 @@ DOMAIN-SUFFIX,cdn.snowplowanalytics.com
 DOMAIN-SUFFIX,spmtracker.com
 DOMAIN-SUFFIX,api.mixpanel.com
 DOMAIN-SUFFIX,decide.mixpanel.com
-DOMAIN-SUFFIX,cdn.mxpnl.com
 DOMAIN-SUFFIX,api.mparticle.com
 DOMAIN-SUFFIX,cdn.mparticle.com
 DOMAIN-SUFFIX,jssdk.mparticle.com
@@ -151,7 +144,6 @@ DOMAIN-SUFFIX,api.synerise.com
 DOMAIN-SUFFIX,tracker.synerise.com
 DOMAIN-SUFFIX,analytics.usermaven.com
 DOMAIN-SUFFIX,cdn.usermaven.com
-DOMAIN-SUFFIX,cdn.luckyorange.com
 DOMAIN-SUFFIX,cdn.smartlook.com
 DOMAIN-SUFFIX,cdn.mouseflow.com
 DOMAIN-SUFFIX,api.mouseflow.com
@@ -168,7 +160,6 @@ DOMAIN-SUFFIX,tags.growingio.com
 DOMAIN-SUFFIX,assets.growingio.com
 DOMAIN-SUFFIX,bigdata.talkie-ai.com
 DOMAIN-SUFFIX,api.keen.io
-DOMAIN-SUFFIX,dcs.adobedc.net
 DOMAIN-SUFFIX,rum.hlx.page
 DOMAIN-SUFFIX,web-sdk.aptrinsic.com
 DOMAIN-SUFFIX,tt.omtrdc.net
@@ -181,7 +172,6 @@ DOMAIN-SUFFIX,events.framer.com
 DOMAIN-SUFFIX,otlp.bugsnag.com
 DOMAIN-SUFFIX,notify.bugsnag.com
 DOMAIN-SUFFIX,analytics.goldcast.io
-DOMAIN-SUFFIX,t.contentsquare.net
 DOMAIN-SUFFIX,t.betterstack.com
 DOMAIN-SUFFIX,events.mapbox.com
 DOMAIN-SUFFIX,static.agentio.com
@@ -206,7 +196,6 @@ DOMAIN-SUFFIX,pnytimes.chartbeat.net
 DOMAIN-SUFFIX,et.nytimes.com
 DOMAIN-SUFFIX,platform.iteratehq.com
 DOMAIN-SUFFIX,cdn.brandmetrics.com
-DOMAIN-SUFFIX,s13.cnzz.com
 DOMAIN-SUFFIX,telemetry.astro.build
 DOMAIN-SUFFIX,log.waimai.meituan.com
 DOMAIN-SUFFIX,h5-data.elemecdn.com
@@ -270,23 +259,18 @@ DOMAIN-SUFFIX,spm.iyoudui.com
 DOMAIN-SUFFIX,amazonservices.122.2o7.net
 DOMAIN-SUFFIX,oracle.sc.omtrdc.net
 DOMAIN-SUFFIX,bizible.com
-DOMAIN-SUFFIX,cdn.bizible.com
 DOMAIN-SUFFIX,sf14g.com
 DOMAIN-SUFFIX,analytics.thephp.foundation
 DOMAIN-SUFFIX,adobedc.net
-DOMAIN-SUFFIX,edge.adobedc.net
 DOMAIN-SUFFIX,marketo.net
 DOMAIN-SUFFIX,mutinycdn.com
 DOMAIN-SUFFIX,pi.pardot.com
 DOMAIN-SUFFIX,mczbf.com
 DOMAIN-SUFFIX,demandbase.com
-DOMAIN-SUFFIX,tag.demandbase.com
 DOMAIN-SUFFIX,nocodelytics.com
-DOMAIN-SUFFIX,tracker.nocodelytics.com
 DOMAIN-SUFFIX,posthog.prd.ainft.com
 DOMAIN-SUFFIX,cdn.convertbox.com
 DOMAIN-SUFFIX,http-inputs-notion.splunkcloud.com
-DOMAIN-SUFFIX,nvidia.tt.omtrdc.net
 DOMAIN-SUFFIX,abtasty.com
 DOMAIN-SUFFIX,dm.slim02.jp
 DOMAIN-SUFFIX,euob.protoroundprince.com

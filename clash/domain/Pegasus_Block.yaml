@@ -1,5 +1,4 @@
-# Module: Pegasus_Block (Clash / Mihomo domain behavior)
-# Upstream: Thoseyearsbrian/Aegis (a3a607d099db) | License: Apache-2.0
+# shuikezhang/Surge-Ruleset | Module: Pegasus_Block (domain)
 payload:
   - '+.regularhours.net'
   - '+.123tramites.com'

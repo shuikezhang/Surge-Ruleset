@@ -1,5 +1,4 @@
-# Module: PCDNDomain
-# Upstream: Thoseyearsbrian/Aegis (a3a607d099db) | License: Apache-2.0
+# shuikezhang/Surge-Ruleset | Module: PCDNDomain
 DOMAIN-SUFFIX,mcdn.bilivideo.cn
 DOMAIN-SUFFIX,mcdn.bilivideo.com
 DOMAIN-SUFFIX,szbdyd.com
@@ -20,18 +19,13 @@ DOMAIN-SUFFIX,p2p.huya.com
 DOMAIN-SUFFIX,pcdn.yximgs.com
 DOMAIN-SUFFIX,yximgs-webrtc.liveplay.myqcloud.com
 DOMAIN-SUFFIX,tp2p.kg.qq.com
-DOMAIN-SUFFIX,musicstun.p2p.qq.com
 DOMAIN-SUFFIX,stun.qqlive.qq.com
 DOMAIN-SUFFIX,p2pupdate.gamedl.qq.com
 DOMAIN-SUFFIX,p2pupgrade.gamedl.qq.com
 DOMAIN-SUFFIX,p2ptun.qq.com
 DOMAIN-SUFFIX,p2p.qq.com
-DOMAIN-SUFFIX,twns.p2ptun.qq.com
 DOMAIN-SUFFIX,signal.qvb.qcloud.com
 DOMAIN-SUFFIX,stun.qvb.qcloud.com
-DOMAIN-SUFFIX,pcdnwxstat.teg.tencent-cloud.net
-DOMAIN-SUFFIX,pcdnwxnat.teg.tencent-cloud.net
-DOMAIN-SUFFIX,pcdnwxlogin.teg.tencent-cloud.net
 DOMAIN-SUFFIX,teg.tencent-cloud.net
 DOMAIN-SUFFIX,p2p.tracker.tv.sohu.com
 DOMAIN-SUFFIX,onethingpcs.com

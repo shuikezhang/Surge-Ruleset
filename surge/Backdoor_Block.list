@@ -1,5 +1,4 @@
-# Module: Backdoor_Block
-# Upstream: Thoseyearsbrian/Aegis (a3a607d099db) | License: Apache-2.0
+# shuikezhang/Surge-Ruleset | Module: Backdoor_Block
 DOMAIN-SUFFIX,nwphotoblog.com
 DOMAIN-SUFFIX,ws.ztts88.cyou
 DOMAIN-SUFFIX,aeya388.club

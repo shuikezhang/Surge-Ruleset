@@ -1,0 +1,18 @@
+# RegionalRouting ruleset (source)
+DOMAIN-SUFFIX,kaspersky.com
+DOMAIN-SUFFIX,kaspersky-labs.com
+DOMAIN-SUFFIX,kaspersky-lab.com
+DOMAIN-SUFFIX,kasperskycontent.com
+DOMAIN-SUFFIX,kasperskyapi.com
+DOMAIN-SUFFIX,kasperskyupdate.com
+DOMAIN-SUFFIX,kasperskylabs.net
+DOMAIN-SUFFIX,kaspersky.ru
+DOMAIN-SUFFIX,kas.pr
+IP-CIDR,79.133.169.139/32,no-resolve
+IP-CIDR,79.133.169.145/32,no-resolve
+IP-CIDR,79.133.171.22/32,no-resolve
+IP-CIDR,119.255.133.28/32,no-resolve
+IP-CIDR,117.41.246.36/32,no-resolve
+IP-CIDR,122.228.73.172/32,no-resolve
+IP-CIDR,209.51.171.230/32,no-resolve
+IP-CIDR,37.203.129.5/32,no-resolve

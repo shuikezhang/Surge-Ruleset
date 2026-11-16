@@ -1,0 +1,20 @@
+# GitHub ruleset (source)
+DOMAIN-SUFFIX,github.com
+DOMAIN-SUFFIX,githubusercontent.com
+DOMAIN-SUFFIX,githubapp.com
+DOMAIN-SUFFIX,githubassets.com
+DOMAIN-SUFFIX,github.blog
+DOMAIN-SUFFIX,githubcopilot.com
+DOMAIN-SUFFIX,ghbtns.com
+DOMAIN-SUFFIX,github.dev
+DOMAIN-SUFFIX,githubnext.com
+DOMAIN-SUFFIX,githubstatus.com
+DOMAIN-SUFFIX,github.careers
+DOMAIN-SUFFIX,git.io
+DOMAIN-SUFFIX,gh.io
+DOMAIN-SUFFIX,ghcr.io
+DOMAIN-SUFFIX,github.cloud.capriza.com
+DOMAIN-SUFFIX,github.io
+DOMAIN-SUFFIX,objects.githubusercontentusercontent.com
+DOMAIN-SUFFIX,github.community
+DOMAIN-SUFFIX,thegithubshop.com

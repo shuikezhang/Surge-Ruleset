@@ -1,5 +1,4 @@
-# Module: Phishing_Block (Clash / Mihomo classical)
-# Upstream: Thoseyearsbrian/Aegis (a3a607d099db) | License: Apache-2.0
+# shuikezhang/Surge-Ruleset | Module: Phishing_Block (classical)
 payload:
   - 'DOMAIN-SUFFIX,jackadmin1.cn'
   - 'DOMAIN-SUFFIX,jackadmin2.cn'
@@ -23,7 +22,6 @@ payload:
   - 'DOMAIN-SUFFIX,360news11.icu'
   - 'DOMAIN-SUFFIX,qqmusic2.com'
   - 'DOMAIN-SUFFIX,qqmusic4.com'
-  - 'DOMAIN-SUFFIX,job3.trnebaiek.cn'
   - 'DOMAIN-SUFFIX,telegrtam.com.cn'
   - 'IP-CIDR,47.86.49.173/32,no-resolve'
   - 'IP-CIDR,47.242.113.81/32,no-resolve'

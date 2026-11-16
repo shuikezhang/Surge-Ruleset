@@ -1,5 +1,4 @@
-# Module: PCDNDomain
-# Upstream: Thoseyearsbrian/Aegis (a3a607d099db) | License: Apache-2.0
+# shuikezhang/Surge-Ruleset | Module: PCDNDomain
 .mcdn.bilivideo.cn
 .mcdn.bilivideo.com
 .szbdyd.com
@@ -20,18 +19,13 @@
 .pcdn.yximgs.com
 .yximgs-webrtc.liveplay.myqcloud.com
 .tp2p.kg.qq.com
-.musicstun.p2p.qq.com
 .stun.qqlive.qq.com
 .p2pupdate.gamedl.qq.com
 .p2pupgrade.gamedl.qq.com
 .p2ptun.qq.com
 .p2p.qq.com
-.twns.p2ptun.qq.com
 .signal.qvb.qcloud.com
 .stun.qvb.qcloud.com
-.pcdnwxstat.teg.tencent-cloud.net
-.pcdnwxnat.teg.tencent-cloud.net
-.pcdnwxlogin.teg.tencent-cloud.net
 .teg.tencent-cloud.net
 .p2p.tracker.tv.sohu.com
 .onethingpcs.com

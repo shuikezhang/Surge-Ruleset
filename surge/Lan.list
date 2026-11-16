@@ -1,5 +1,4 @@
-# Module: Lan
-# Upstream: Thoseyearsbrian/Aegis (a3a607d099db) | License: Apache-2.0
+# shuikezhang/Surge-Ruleset | Module: Lan
 DOMAIN-SUFFIX,local
 DOMAIN-SUFFIX,lan
 DOMAIN-SUFFIX,home.arpa

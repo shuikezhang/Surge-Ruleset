@@ -1,5 +1,4 @@
-# Module: Lan (Clash / Mihomo classical)
-# Upstream: Thoseyearsbrian/Aegis (a3a607d099db) | License: Apache-2.0
+# shuikezhang/Surge-Ruleset | Module: Lan (classical)
 payload:
   - 'DOMAIN-SUFFIX,local'
   - 'DOMAIN-SUFFIX,lan'

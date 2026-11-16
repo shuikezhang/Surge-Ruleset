@@ -1,19 +1,11 @@
-# Module: Microsoft
-# Upstream: Thoseyearsbrian/Aegis (a3a607d099db) | License: Apache-2.0
-.update.code.visualstudio.com
+# shuikezhang/Surge-Ruleset | Module: Microsoft
 .vscode-cdn.net
 .gallery.vsassets.io
 .gallerycdn.vsassets.io
-.main.vscode-cdn.net
 .vscode-unpkg.net
-.code.visualstudio.com
 .vscode.dev
 .cdn.vsassets.io
-.api.cognitive.microsoft.com
 .microsofttranslator.com
-.api.translate.microsoft.com
-.cdn.translate.microsoft.com
-.translatoruser.intl.microsoft.com
 .microsoft.com
 .windows.com
 .msn.com
@@ -29,7 +21,6 @@
 .trafficmanager.net
 .cloudapp.net
 .windowsazure.com
-.azure.microsoft.com
 .service.signalr.net
 .office.com
 .office365.com
@@ -44,32 +35,19 @@
 .yammer.com
 .onecdn.static.microsoft
 .gfx.ms
-.mem.gfx.ms
 .onedrive.com
 .1drv.com
-.storage.live.com
-.teams.microsoft.com
 .skypeforbusiness.com
 .lync.com
 .omnichannelengagementhub.com
 .skype.com
 .skypeassets.com
-.edge.microsoft.com
-.edgeservices.bing.com
 .msedge.net
 .bing.com
 .bing.net
-.api.bing.com
-.cdn.bing.com
 .windowsupdate.com
-.update.microsoft.com
 .msftconnecttest.com
 .msftncsi.com
-.windowsupdate.microsoft.com
-.dev.microsoft.com
-.learn.microsoft.com
-.docs.microsoft.com
-.support.microsoft.com
 .aka.ms
 .visualstudio.com
 .nuget.org
@@ -84,13 +62,9 @@
 .akadns.net
 .acctcdn.msftauth.net
 .logincdn.msftauth.net
-.graph.microsoft.com
 .s-microsoft.com
 .onestore.ms
 .powerbi.com
-.login.live.com
-.login.windows.net
-.sts.windows.net
 .msauth.net
 .msftauthimages.net
 .static2.sharepointonline.com
@@ -98,6 +72,4 @@
 .microsoftazuread-sso.com
 .powerapps.com
 .thesourcemediaassets.com
-.settings-win.data.microsoft.com
-.vortex.data.microsoft.com
 .applicationinsights.azure.cn

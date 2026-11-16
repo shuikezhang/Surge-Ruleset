@@ -1,5 +1,4 @@
-# Module: Backdoor_Block (Clash / Mihomo classical)
-# Upstream: Thoseyearsbrian/Aegis (a3a607d099db) | License: Apache-2.0
+# shuikezhang/Surge-Ruleset | Module: Backdoor_Block (classical)
 payload:
   - 'DOMAIN-SUFFIX,nwphotoblog.com'
   - 'DOMAIN-SUFFIX,ws.ztts88.cyou'

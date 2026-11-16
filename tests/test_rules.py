@@ -91,5 +91,15 @@ class RulesetTestSuite(unittest.TestCase):
                             self.assertFalse(bnet.overlaps(snet), msg=f"{bm}:{bnet} overlaps {sm}:{snet}")
 
 
+    def test_no_upstream_coupling_and_domestic_cdn_clean(self):
+        self.assertFalse((ROOT / ".github" / "workflows" / "sync-aegis.yml").exists())
+        self.assertTrue((ROOT / "src" / "OpenAI.list").exists())
+        proxy_text = (ROOT / "surge" / "Proxy.list").read_text(encoding="utf-8")
+        for dom in ("huaweicloud.com", "myhuaweicloud.com", "sf-express.com", "tencent-cloud.com", "jd.com", "jd.hk"):
+            self.assertNotIn(f",{dom}\n", proxy_text, msg=f"Domestic CDN {dom} still in Proxy.list")
+        for p in [ROOT / "README.md", ROOT / "manifest.json", ROOT / ".github" / "workflows" / "ci.yml"]:
+            self.assertNotIn("Thoseyearsbrian", p.read_text(encoding="utf-8"))
+
+
 if __name__ == "__main__":
     unittest.main()

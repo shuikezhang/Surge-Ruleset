@@ -1,5 +1,4 @@
-# Module: Quarantine_Block
-# Upstream: Thoseyearsbrian/Aegis (a3a607d099db) | License: Apache-2.0
+# shuikezhang/Surge-Ruleset | Module: Quarantine_Block
 DOMAIN-SUFFIX,squarerefresh.xyz
 DOMAIN-SUFFIX,ahdohpiechei.com
 IP-CIDR,117.68.54.33/32,no-resolve

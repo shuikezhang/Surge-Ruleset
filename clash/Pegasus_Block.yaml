@@ -1,5 +1,4 @@
-# Module: Pegasus_Block (Clash / Mihomo classical)
-# Upstream: Thoseyearsbrian/Aegis (a3a607d099db) | License: Apache-2.0
+# shuikezhang/Surge-Ruleset | Module: Pegasus_Block (classical)
 payload:
   - 'DOMAIN-SUFFIX,regularhours.net'
   - 'DOMAIN-SUFFIX,123tramites.com'

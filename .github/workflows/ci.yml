@@ -1,0 +1,46 @@
+name: Build & Test Rulesets
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - '.github/workflows/ci.yml'
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Compile Surge & Clash artifacts and run test suite
+        run: |
+          python3 scripts/build_rules.py --verify
+          python3 -m unittest discover -s tests -v
+
+      - name: Auto-commit compiled artifacts if src changed
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add surge clash manifest.json README.md
+          if git diff --cached --quiet; then
+            echo "Artifacts already up to date."
+            exit 0
+          fi
+          git commit -m "chore(build): recompile Surge & Clash rulesets from src"
+          git push origin HEAD:main
