@@ -81,14 +81,21 @@ def parse_rule_line(raw: str, source_file: str, lineno: int) -> tuple[str, str] 
         # Clean macOS smart-dash / zero-width chars in punycode (e.g. xn—\u200b -> xn--)
         val = re.sub(r"[\u200b-\u200f\ufeff]", "", val)
         val = val.replace("xn\u2014", "xn--").replace("xn\u2013", "xn--")
-        val = val.lstrip(".").strip().lower()
+        val = val.strip().strip(".").lower()
         if any(ord(ch) > 127 for ch in val):
             try:
                 val = val.encode("idna").decode("ascii")
             except UnicodeError:
                 print(f"WARN {source_file}:{lineno}: skipping invalid IDN {val!r}", file=sys.stderr)
                 return None
-        if not val or not DOMAIN_RE.match(val):
+        labels = val.split(".") if val else []
+        valid_labels = (
+            bool(labels)
+            and len(val) <= 253
+            and DOMAIN_RE.match(val) is not None
+            and all(1 <= len(lb) <= 63 and not lb.startswith("-") and not lb.endswith("-") for lb in labels)
+        )
+        if not valid_labels:
             print(f"WARN {source_file}:{lineno}: skipping invalid domain {val!r}", file=sys.stderr)
             return None
     elif rtype == "DOMAIN-KEYWORD":
