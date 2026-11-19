@@ -117,3 +117,8 @@ payload:
   - 'DOMAIN-SUFFIX,doubleclick-cn.net'
   - 'DOMAIN-SUFFIX,2mdn.net'
   - 'DOMAIN-SUFFIX,static.googleadsserving.cn'
+  - 'DOMAIN-SUFFIX,google'
+  - 'DOMAIN-SUFFIX,antigravity.google'
+  - 'DOMAIN-SUFFIX,goog'
+  - 'DOMAIN-SUFFIX,pki.goog'
+  - 'DOMAIN-SUFFIX,1e100.net'

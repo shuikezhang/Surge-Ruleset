@@ -62,9 +62,9 @@
       "surge_rules": 122
     },
     "Google": {
-      "clash_classical_rules": 117,
+      "clash_classical_rules": 122,
       "pure_domain_set": false,
-      "surge_rules": 117
+      "surge_rules": 122
     },
     "Lan": {
       "clash_classical_rules": 28,
@@ -82,9 +82,9 @@
       "surge_rules": 74
     },
     "OpenAI": {
-      "clash_classical_rules": 189,
+      "clash_classical_rules": 190,
       "pure_domain_set": false,
-      "surge_rules": 190
+      "surge_rules": 191
     },
     "PCDNDomain": {
       "clash_classical_rules": 38,
